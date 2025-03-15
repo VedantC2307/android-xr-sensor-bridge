@@ -87,7 +87,7 @@ wss.on('connection', (ws) => {
       const data = JSON.parse(message);
       if (sensorPublisher) {
         await sensorPublisher.send(['sensor_data', JSON.stringify(data)]);
-        console.log('Data forwarded to ZMQ:', data.camera ? 'pose+camera' : 'pose only');
+        // console.log('Data forwarded to ZMQ:', data.camera ? 'pose+camera' : 'pose only');
       }
     } catch (err) {
       console.error('Error processing message:', err);
